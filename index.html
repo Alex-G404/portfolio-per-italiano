@@ -1,182 +1,242 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio di Italiano | Temi e Saggi</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Andrei Alexandru Gaita</title>
+  
+  <!-- Font Google: Inter, Cinzel e Newsreader -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="logo">
-            <span class="icon">📜</span> Portfolio Italiano
-        </div>
-        <nav class="nav-links">
-            <a href="#temi">Archivio Temi</a>
-            <a href="#about">Info Progetto</a>
-        </nav>
-    </header>
+  <!-- Menu di navigazione -->
+  <nav class="navbar">
+    <div class="logo">Portfolio<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">Chi Sono</a></li>
+      <li><a href="#projects">Timeline</a></li>
+      <li><a href="#temi">Temi d'Italiano</a></li>
+      <li><a href="#contact">Contatti</a></li>
+    </ul>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge">Raccolta Scolastica</span>
-            <h1>Archivio dei Temi di Italiano</h1>
-            <p>Raccolta digitale dei temi d'Italiano svolti durante l'anno, integrati con trascrizioni complete e note di correzione dei docenti.</p>
-        </div>
+  <!-- Hero a schermo intero con dissolvenza allo scroll -->
+  <header class="hero-wrapper">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-content" id="heroContent">
+      <h1>ANDREI ALEXANDRU GAITA</h1>
+      <p>Benvenuto nel mio portfolio, qui potrai scoprire i miei lavori e le mie esperienze.</p>
+      <div class="scroll-indicator">&#x2193;</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sezione Chi Sono -->
+    <section id="about" class="section">
+      <h2>Chi Sono?</h2>
+      <div class="card">
+        <p>Mi chiamo Andrei Alexandru Gaita e sono uno studente dell'istituto Carlo Grassi. Ho varie passioni, tra cui la principale è quella di imparare.</p>
+      </div>
     </section>
 
-    <!-- Main Container -->
-    <main class="container" id="temi">
-        <!-- Search and Filter Header -->
+    <!-- Sezione Timeline Progetti -->
+    <section id="projects" class="section">
+      <h2>I Miei Anni di Studio & Progetti</h2>
+      <p class="timeline-hint">Clicca su un anno per visualizzare il progetto svolto:</p>
+      
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-nodes">
+          <button class="node-btn" data-year="1" aria-label="Anno 1">1</button>
+          <button class="node-btn" data-year="2" aria-label="Anno 2">2</button>
+          <button class="node-btn" data-year="3" aria-label="Anno 3">3</button>
+          <button class="node-btn" data-year="4" aria-label="Anno 4">4</button>
+          <button class="node-btn" data-year="5" aria-label="Anno 5">5</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione Temi di Italiano (Al posto delle FAQ - Design Scrittoio/Carta) -->
+    <section id="temi" class="section desk-section">
+      <div class="desk-paper">
         <div class="filter-bar">
-            <h2>I Temi Trascritti</h2>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">Tutti</button>
-                <button class="filter-btn" data-filter="novecento">Novecento</button>
-                <button class="filter-btn" data-filter="ottocento">Ottocento</button>
-            </div>
+          <div>
+            <span class="desk-badge">Archivio Umanistico</span>
+            <h2 class="desk-title">Temi di Italiano</h2>
+          </div>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Tutti</button>
+            <button class="filter-btn" data-filter="novecento">Novecento</button>
+            <button class="filter-btn" data-filter="ottocento">Ottocento</button>
+          </div>
         </div>
+        <p class="desk-subtitle">Raccolta di produzioni scritte con trascrizioni complete e correzioni della docente.</p>
 
-        <!-- Cards Grid -->
+        <!-- Griglia Temi -->
         <div class="grid">
-            <!-- Orwell Card -->
-            <article class="card" data-category="novecento" onclick="openEssay('orwell')">
-                <div class="card-tag">Analisi del Testo</div>
-                <h3>La Fattoria degli Animali e George Orwell</h3>
-                <p class="traccia">"Che caratteristiche si possono trovare in comune tra un maiale ed un essere humano?"</p>
-                <div class="card-meta">
-                    <span>📅 28/03/2026</span>
-                    <span class="grade">Voto: 7/10</span>
-                </div>
-                <button class="read-btn">Leggi Tema Complete →</button>
-            </article>
-
-            <!-- Leopardi Placeholder Card -->
-            <article class="card disabled" data-category="ottocento">
-                <div class="card-tag tag-coming">In Arrivo</div>
-                <h3>Saggio su Giacomo Leopardi</h3>
-                <p class="traccia">Prossimo tema in fase di trascrizione e revisione...</p>
-                <div class="card-meta">
-                    <span>📅 Prossimamente</span>
-                    <span class="grade-placeholder">In lavorazione</span>
-                </div>
-                <button class="read-btn" disabled>Non ancora disponibile</button>
-            </article>
-        </div>
-    </main>
-
-    <!-- Modal for Essay View -->
-    <div id="essayModal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeEssay()">&times;</button>
-            
-            <!-- Controls inside Modal -->
-            <div class="modal-toolbar">
-                <label class="toggle-container">
-                    <input type="checkbox" id="toggleNotes" checked onchange="toggleTeacherNotes()">
-                    <span class="checkmark"></span>
-                    Mostra Note e Correzioni della Prof.
-                </label>
+          <!-- Orwell Card -->
+          <article class="essay-card" data-category="novecento" onclick="openEssay('orwell')">
+            <div class="card-tag">Analisi del Testo</div>
+            <h3>La Fattoria degli Animali e George Orwell</h3>
+            <p class="traccia">"Che caratteristiche si possono trovare in comune tra un maiale ed un essere humano?"</p>
+            <div class="card-meta">
+              <span>📅 28/03/2026</span>
+              <span class="grade">Voto: 7/10</span>
             </div>
+            <button class="read-btn">Leggi Tema Completo &rarr;</button>
+          </article>
 
-            <!-- Essay Article -->
-            <article class="essay-paper">
-                <header class="essay-header">
-                    <div class="essay-meta-top">
-                        <span class="author">Alex Gaita</span>
-                        <span class="date">Prova d'Italiano — 28/03/26</span>
-                        <span class="final-grade">Voto: 7</span>
-                    </div>
-                    
-                    <div class="teacher-main-note notes-element">
-                        ✍️ <strong>Giudizio della Prof:</strong> "C'è un po' di confusione ideologica."
-                    </div>
-
-                    <h2 class="traccia-title">Traccia: <em>Che caratteristiche si possono trovare in comune tra un maiale ed un essere umano?</em></h2>
-                </header>
-
-                <div class="essay-body">
-                    <!-- Page 1 -->
-                    <div class="page-divider">Pagina 1</div>
-                    <p>
-                        Eric Arthur Blair, noto come George Orwell, fu un celebre giornalista e romanziere nella Gran Bretagna degli anni '30. Nacque a Motihari in Bengala, India 
-                        <span class="note-inline notes-element">[Nota Prof: giovinezza?]</span>. 
-                        Sin dalla sua permanenza in India possedeva un disprezzo per il Socialismo che ebbe origine e diffusione, nel post abbattimento dell'Impero Russo e agli albori dell'Unione Sovietica 
-                        <span class="note-inline notes-element">[Nota Prof: No. In realtà era socialista, solo dopo rimane deluso]</span>. 
-                        Questo suo disprezzo tuttavia, non nacque per la visione di pensiero per la quale l'URSS si millantava di essere, ma per il come quest'ultimi l'applicavano.
-                    </p>
-
-                    <p>
-                        La sua visione di pensiero si basava sulle fondamenta dell'uguaglianza Socialista e la libertà espressiva della Democrazia, dando origine a questa visione denominata Socialismo Democratico. Una delle "regole fondamentali" di questo suo idealismo era la "Comune Decenza" (Common Decency), che si basava sull'onestà ordinaria, il buon senso, la solidarietà spontanea e l'altruismo. Riteneva che il movimento di sinistra "ideologico" comportasse...
-                    </p>
-
-                    <div class="teacher-footer-note notes-element">
-                        📌 <strong>Nota a piè pagina (Prof):</strong> "Era nemico dello Stalinismo, non del socialismo."
-                    </div>
-
-                    <!-- Page 2 -->
-                    <div class="page-divider">Pagina 2</div>
-                    <p>
-                        ...una minaccia. Utilizzando le sue doti da giornalista condivise tramite saggi, come per esempio: "La Politica e la Lingua Inglese" (<em>Politics and the English Language</em>), il suo odio il totalitarismo e le sue attuali visioni politiche. Nel 1936-1939 si batté contro il Fascismo di Francisco Franco in Spagna 
-                        <span class="note-inline notes-element">[Nota Prof: partecipando alle Guerre di Spagna]</span>.
-                    </p>
-
-                    <p>
-                        Ho scelto questo libro perché noto un interesse per questo autore e le sue opere come: "1984" e "la fattoria degli animali", il suo stile di scrittura e la sua, come per esempio, critica di una visione di pensiero e cattiva gestione di esso tramite la scrittura, come per esempio nel "Comune Decenza" oppure nel romanzo "Fattoria degli animali", quest'ultima una delle sue opere più famose.
-                    </p>
-
-                    <p>
-                        "La Fattoria degli animali" parla di come gli animali all'interno della fattoria siano stanchi dei continui maltrattamenti da parte della razza umana, come dice a pagina dodici, riga quinta-ottava:
-                    </p>
-
-                    <blockquote class="quote-box">
-                        "Nasciamo, ci danno da mangiare quel tanto che basta a mantenere il respiro nel nostro corpo, e chi tra noi è in grado di farlo è costretto a lavorare fino all'ultimo atomo delle sue forze"
-                    </blockquote>
-
-                    <!-- Page 3 -->
-                    <div class="page-divider">Pagina 3</div>
-                    <p>
-                        ...decidendo così di ribellarsi. Con l'andare avanti del racconto gli anni sopraggiungono ed è possibile notare come, i maiali, coloro che "guidarono" questa riforma, utilizzano il mezzo della loro conoscenza come strumento per instaurare un governo, proprio come gli umani, che suddivideva i vari animali in "gruppi sociali", fino a raggiungere una forma di totalitarismo nella quale i maiali erano "più uguali" degli altri animali, infrangendo completamente l'origine della rivolta.
-                    </p>
-
-                    <p>Una frase celebre che Orwell scrisse per "riassumere" questo concetto è:</p>
-
-                    <blockquote class="quote-box">
-                        "Le creature fuori guardavano dal maiale all'uomo, dall'uomo al maiale e di nuovo dal maiale all'uomo, ma era ormai impossibile distinguere l'uno dall'altro."<br>
-                        <small style="color: #666;">(pagina centododici; riga seconda - quarta)</small>
-                    </blockquote>
-
-                    <p>
-                        I tratti fondamentali di questo racconto sono come utilizza, inizialmente, il senso di giustizia che viene instaurato all'inizio di ogni governo, facendo già prevedere che piega avrebbe preso questo racconto. Noi lettori, notando la "natura" malinconica di questo racconto, non possiamo anche non notare la satira che voleva instaurare nei riguardi dell'Unione Sovietica.
-                    </p>
-
-                    <!-- Page 4 -->
-                    <div class="page-divider">Pagina 4</div>
-                    <p>
-                        George Orwell ci vuole far notare la progressiva violenza e perdita di controllo delle persone al comando della fattoria.
-                    </p>
-
-                    <p>
-                        In conclusione questo brano è la rappresentazione romanzata della caduta dell'URSS. In questo racconto qual è la caratteristica che accomuna il maiale all'uomo? Il bisogno inestimabile di volere sempre più potere e controllo.
-                    </p>
-
-                    <div class="teacher-footer-note notes-element">
-                        📌 <strong>Nota finale (Prof):</strong> "L'URSS cadde nel 1991, il 25 dicembre. Quello che critica Orwell è il tradimento degli ideali iniziali del comunismo."
-                    </div>
-                </div>
-            </article>
+          <!-- Leopardi Placeholder Card -->
+          <article class="essay-card disabled" data-category="ottocento">
+            <div class="card-tag tag-coming">In Arrivo</div>
+            <h3>Saggio su Giacomo Leopardi</h3>
+            <p class="traccia">Prossimo tema in fase di trascrizione e revisione...</p>
+            <div class="card-meta">
+              <span>📅 Prossimamente</span>
+              <span class="grade-placeholder">In lavorazione</span>
+            </div>
+            <button class="read-btn" disabled>Non ancora disponibile</button>
+          </article>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- JS Link -->
-    <script src="main.js"></script>
+    <!-- Sezione Contatti -->
+    <section id="contact" class="section">
+      <h2>Contattami</h2>
+      <div class="card text-center">
+        <p>Puoi scrivermi direttamente al seguente indirizzo:</p>
+        <a href="mailto:gaita.andreialeandru@itisgrassi.edu.it" class="accent-link">gaita.andreialeandru@itisgrassi.edu.it</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Finestra Modale Pop-up del Progetto (Timeline) -->
+  <dialog id="project-modal" class="modal-dialog">
+    <div class="modal-box">
+      <button id="close-modal" class="modal-close" aria-label="Chiudi finestra">&times;</button>
+      <span id="modal-tag" class="modal-tag">Anno 1</span>
+      <h3 id="modal-title">Titolo Progetto</h3>
+      <p id="modal-tech" class="modal-tech">Tecnologie usate</p>
+      <p id="modal-desc">Descrizione del progetto svolto durante questo anno scolastico.</p>
+      <div class="modal-actions">
+        <a id="modal-link" href="#" target="_blank" class="accent-link">Vedi Progetto / Codice &rarr;</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Finestra Modale di Lettura Tema di Italiano -->
+  <div id="essayModal" class="modal-essay-overlay">
+    <div class="modal-essay-content">
+      <button class="close-essay-btn" onclick="closeEssay()">&times;</button>
+      
+      <!-- Toolbar con toggle annotazioni -->
+      <div class="modal-toolbar">
+        <label class="toggle-container">
+          <input type="checkbox" id="toggleNotes" checked onchange="toggleTeacherNotes()">
+          <span class="checkmark"></span>
+          Mostra Note e Correzioni della Prof.
+        </label>
+      </div>
+
+      <!-- Testo del Tema -->
+      <article class="essay-paper">
+        <header class="essay-header">
+          <div class="essay-meta-top">
+            <span class="author">Alex Gaita</span>
+            <span class="date">Prova d'Italiano — 28/03/26</span>
+            <span class="final-grade">Voto: 7</span>
+          </div>
+          
+          <div class="teacher-main-note notes-element">
+            ✍️ <strong>Giudizio della Prof:</strong> "C'è un po' di confusione ideologica."
+          </div>
+
+          <h2 class="traccia-title">Traccia: <em>Che caratteristiche si possono trovare in comune tra un maiale ed un essere umano?</em></h2>
+        </header>
+
+        <div class="essay-body">
+          <!-- Pagina 1 -->
+          <div class="page-divider">Pagina 1</div>
+          <p>
+            Eric Arthur Blair, noto come George Orwell, fu un celebre giornalista e romanziere nella Gran Bretagna degli anni '30. Nacque a Motihari in Bengala, India 
+            <span class="note-inline notes-element">[Nota Prof: giovinezza?]</span>. 
+            Sin dalla sua permanenza in India possedeva un disprezzo per il Socialismo che ebbe origine e diffusione, nel post abbattimento dell'Impero Russo e agli albori dell'Unione Sovietica 
+            <span class="note-inline notes-element">[Nota Prof: No. In realtà era socialista, solo dopo rimane deluso]</span>. 
+            Questo suo disprezzo tuttavia, non nacque per la visione di pensiero per la quale l'URSS si millantava di essere, ma per il come quest'ultimi l'applicavano.
+          </p>
+
+          <p>
+            La sua visione di pensiero si basava sulle fondamenta dell'uguaglianza Socialista e la libertà espressiva della Democrazia, dando origine a questa visione denominata Socialismo Democratico. Una delle "regole fondamentali" di questo suo idealismo era la "Comune Decenza" (Common Decency), che si basava sull'onestà ordinaria, il buon senso, la solidarietà spontanea e l'altruismo. Riteneva che il movimento di sinistra "ideologico" comportasse...
+          </p>
+
+          <div class="teacher-footer-note notes-element">
+            📌 <strong>Nota a piè pagina (Prof):</strong> "Era nemico dello Stalinismo, non del socialismo."
+          </div>
+
+          <!-- Pagina 2 -->
+          <div class="page-divider">Pagina 2</div>
+          <p>
+            ...una minaccia. Utilizzando le sue doti da giornalista condivise tramite saggi, come per esempio: "La Politica e la Lingua Inglese" (<em>Politics and the English Language</em>), il suo odio il totalitarismo e le sue attuali visioni politiche. Nel 1936-1939 si batté contro il Fascismo di Francisco Franco in Spagna 
+            <span class="note-inline notes-element">[Nota Prof: partecipando alle Guerre di Spagna]</span>.
+          </p>
+
+          <p>
+            Ho scelto questo libro perché noto un interesse per questo autore e le sue opere come: "1984" e "la fattoria degli animali", il suo stile di scrittura e la sua, come per esempio, critica di una visione di pensiero e cattiva gestione di esso tramite la scrittura, come per esempio nel "Comune Decenza" oppure nel romanzo "Fattoria degli animali", quest'ultima una delle sue opere più famose.
+          </p>
+
+          <p>
+            "La Fattoria degli animali" parla di come gli animali all'interno della fattoria siano stanchi dei continui maltrattamenti da parte della razza umana, come dice a pagina dodici, riga quinta-ottava:
+          </p>
+
+          <blockquote class="quote-box">
+            "Nasciamo, ci danno da mangiare quel tanto che basta a mantenere il respiro nel nostro corpo, e chi tra noi è in grado di farlo è costretto a lavorare fino all'ultimo atomo delle sue forze"
+          </blockquote>
+
+          <!-- Pagina 3 -->
+          <div class="page-divider">Pagina 3</div>
+          <p>
+            ...decidendo così di ribellarsi. Con l'andare avanti del racconto gli anni sopraggiungono ed è possibile notare come, i maiali, coloro che "guidarono" questa riforma, utilizzano il mezzo della loro conoscenza come strumento per instaurare un governo, proprio come gli umani, che suddivideva i vari animali in "gruppi sociali", fino a raggiungere una forma di totalitarismo nella quale i maiali erano "più uguali" degli altri animali, infrangendo completamente l'origine della rivolta.
+          </p>
+
+          <p>Una frase celebre che Orwell scrisse per "riassumere" questo concetto è:</p>
+
+          <blockquote class="quote-box">
+            "Le creature fuori guardavano dal maiale all'uomo, dall'uomo al maiale e di nuovo dal maiale all'uomo, ma era ormai impossibile distinguere l'uno dall'altro."<br>
+            <small style="color: #666;">(pagina centododici; riga seconda - quarta)</small>
+          </blockquote>
+
+          <p>
+            I tratti fondamentali di questo racconto sono come utilizza, inizialmente, il senso di giustizia che viene instaurato all'inizio di ogni governo, facendo già prevedere che piega avrebbe preso questo racconto. Noi lettori, notando la "natura" malinconica di questo racconto, non possiamo anche non notare la satira che voleva instaurare nei riguardi dell'Unione Sovietica.
+          </p>
+
+          <!-- Pagina 4 -->
+          <div class="page-divider">Pagina 4</div>
+          <p>
+            George Orwell ci vuole far notare la progressiva violenza e perdita di controllo delle persone al comando della fattoria.
+          </p>
+
+          <p>
+            In conclusione questo brano è la rappresentazione romanzata della caduta dell'URSS. In questo racconto qual è la caratteristica che accomuna il maiale all'uomo? Il bisogno inestimabile di volere sempre più potere e controllo.
+          </p>
+
+          <div class="teacher-footer-note notes-element">
+            📌 <strong>Nota finale (Prof):</strong> "L'URSS cadde nel 1991, il 25 dicembre. Quello che critica Orwell è il tradimento degli ideali iniziali del comunismo."
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Andrei Alexandru Gaita. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
